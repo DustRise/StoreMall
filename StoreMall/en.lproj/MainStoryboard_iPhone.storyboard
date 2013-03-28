@@ -86,8 +86,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="pCk-fr-cav" kind="push" trigger="accessoryAction" id="56Z-qA-4pp"/>
-                                    <segue destination="pCk-fr-cav" kind="push" id="wD0-ZL-ubj"/>
+                                    <segue destination="pCk-fr-cav" kind="push" id="baE-tb-uWj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -140,7 +139,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="wD0-ZL-ubj"/>
-    </inferredMetricsTieBreakers>
 </document>
