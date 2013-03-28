@@ -19,6 +19,9 @@
 		E591063C170401480015B877 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E591063A170401480015B877 /* MainStoryboard_iPhone.storyboard */; };
 		E591063F170401480015B877 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E591063D170401480015B877 /* MainStoryboard_iPad.storyboard */; };
 		E5910642170401480015B877 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5910641170401480015B877 /* ViewController.m */; };
+		E591064A1704289E0015B877 /* Catagory.m in Sources */ = {isa = PBXBuildFile; fileRef = E59106491704289E0015B877 /* Catagory.m */; };
+		E591064C170428F50015B877 /* Stores.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E591064B170428F50015B877 /* Stores.sqlite */; };
+		E591064E170429310015B877 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E591064D170429310015B877 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,10 @@
 		E591063E170401480015B877 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		E5910640170401480015B877 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E5910641170401480015B877 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E59106481704289E0015B877 /* Catagory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Catagory.h; sourceTree = "<group>"; };
+		E59106491704289E0015B877 /* Catagory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catagory.m; sourceTree = "<group>"; };
+		E591064B170428F50015B877 /* Stores.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stores.sqlite; sourceTree = "<group>"; };
+		E591064D170429310015B877 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E591064E170429310015B877 /* libsqlite3.0.dylib in Frameworks */,
 				E5910623170401480015B877 /* UIKit.framework in Frameworks */,
 				E5910625170401480015B877 /* Foundation.framework in Frameworks */,
 				E5910627170401480015B877 /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +66,7 @@
 		E5910616170401480015B877 = {
 			isa = PBXGroup;
 			children = (
+				E591064D170429310015B877 /* libsqlite3.0.dylib */,
 				E5910628170401480015B877 /* StoreMall */,
 				E5910621170401480015B877 /* Frameworks */,
 				E5910620170401480015B877 /* Products */,
@@ -91,6 +100,8 @@
 				E591063D170401480015B877 /* MainStoryboard_iPad.storyboard */,
 				E5910640170401480015B877 /* ViewController.h */,
 				E5910641170401480015B877 /* ViewController.m */,
+				E59106481704289E0015B877 /* Catagory.h */,
+				E59106491704289E0015B877 /* Catagory.m */,
 				E5910629170401480015B877 /* Supporting Files */,
 			);
 			path = StoreMall;
@@ -99,6 +110,7 @@
 		E5910629170401480015B877 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E591064B170428F50015B877 /* Stores.sqlite */,
 				E591062A170401480015B877 /* StoreMall-Info.plist */,
 				E591062B170401480015B877 /* InfoPlist.strings */,
 				E591062E170401480015B877 /* main.m */,
@@ -167,6 +179,7 @@
 				E5910639170401480015B877 /* Default-568h@2x.png in Resources */,
 				E591063C170401480015B877 /* MainStoryboard_iPhone.storyboard in Resources */,
 				E591063F170401480015B877 /* MainStoryboard_iPad.storyboard in Resources */,
+				E591064C170428F50015B877 /* Stores.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +193,7 @@
 				E591062F170401480015B877 /* main.m in Sources */,
 				E5910633170401480015B877 /* AppDelegate.m in Sources */,
 				E5910642170401480015B877 /* ViewController.m in Sources */,
+				E591064A1704289E0015B877 /* Catagory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
