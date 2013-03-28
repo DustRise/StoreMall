@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "sqlite3.h"
 
 @interface SubCatagory : UITableViewController
+{
+
+    NSString *source, *destination;
+    NSArray *docpath;
+    NSFileManager *manager;
+    NSMutableArray *Arrvalues;
+
+       
+    
+    
+}
+-(void)display;
 
 @end
