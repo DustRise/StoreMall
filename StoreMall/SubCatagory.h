@@ -16,11 +16,12 @@
     NSArray *docpath;
     NSFileManager *manager;
     NSMutableArray *Arrvalues;
-
-       
-    
+     
     
 }
+
+@property(nonatomic, retain) NSString *values;
+
 -(void)display;
 
 @end

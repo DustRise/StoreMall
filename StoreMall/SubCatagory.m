@@ -13,6 +13,9 @@
 @end
 
 @implementation SubCatagory
+@synthesize values;
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,6 +30,10 @@
 {
     [super viewDidLoad];
 
+    values=[[NSString alloc]init];
+    
+    NSLog(@"Values :%@", values);
+    
     Arrvalues=[[NSMutableArray alloc]init];
     
     [self.navigationController setTitle:@"Catagorey"];

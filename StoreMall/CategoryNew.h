@@ -1,8 +1,8 @@
 //
-//  Catagory.h
-//  StoreApp
+//  CategoryNew.h
+//  StoreMall
 //
-//  Created by dustrise on 25/03/13.
+//  Created by dustrise on 28/03/13.
 //  Copyright (c) 2013 dustrise. All rights reserved.
 //
 
@@ -10,15 +10,15 @@
 #import "sqlite3.h"
 #import "SubCatagory.h"
 
-@interface Catagory : UITableViewController
+
+@interface CategoryNew : UITableViewController
 {
     
     NSString *source, *destination;
     NSArray *docpath;
     NSFileManager *manager;
     NSMutableArray *Arrvalues;
-    
-    
+     
     
     
 }
@@ -26,5 +26,6 @@
 @property(nonatomic,retain)NSString *data;
 
 -(void)display;
+
 
 @end

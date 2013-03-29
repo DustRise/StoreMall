@@ -22,7 +22,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3WL-AM-PqA" kind="push" id="Kbh-lH-wX0"/>
+                                    <segue destination="3WL-AM-PqA" kind="push" id="98g-Ue-52G"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,6 +68,37 @@
             </objects>
             <point key="canvasLocation" x="349" y="-830"/>
         </scene>
+        <!--Category New-->
+        <scene sceneID="RMc-ZW-82g">
+            <objects>
+                <tableViewController id="AXh-6v-Y3d" customClass="CategoryNew" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eEq-7P-hbU">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iNr-Fq-lsH">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="AXh-6v-Y3d" id="cbu-bS-8tC"/>
+                            <outlet property="delegate" destination="AXh-6v-Y3d" id="glC-cu-JGd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gaR-zr-yFg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KnU-pN-HaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-161" y="-166"/>
+        </scene>
         <!--Catagory-->
         <scene sceneID="dph-mh-dEL">
             <objects>
@@ -86,10 +117,11 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="pCk-fr-cav" kind="push" id="baE-tb-uWj"/>
+                                    <segue destination="pCk-fr-cav" kind="push" identifier="passValue" trigger="accessoryAction" id="1VW-Hs-lIJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="3WL-AM-PqA" id="pKe-k5-Ooa"/>
                             <outlet property="delegate" destination="3WL-AM-PqA" id="QSZ-9m-ta5"/>
@@ -99,7 +131,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVZ-ws-XsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-97" y="-830"/>
+            <point key="canvasLocation" x="-219" y="-830"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WlB-BH-7cH">
@@ -120,20 +152,6 @@
             <point key="canvasLocation" x="-996" y="-166"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="Catagory" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Catagory.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SubCatagory" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubCatagory.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
