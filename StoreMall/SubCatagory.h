@@ -15,8 +15,9 @@
     NSString *source, *destination;
     NSArray *docpath;
     NSFileManager *manager;
-    NSMutableArray *Arrvalues;
-     
+    NSMutableArray *Arrvalues,*Arrvalues1;
+    NSString *str,*str1;
+    NSArray *arr,*arr1;
     
 }
 

@@ -31,11 +31,20 @@
 {
     [super viewDidLoad];
 
+}
+
+-(void)display:(id)sender;
+{
+
     values=[[NSString alloc]init];
+    
+    values=sender;
     
     NSLog(@"Values :%@", values);
     
     Arrvalues=[[NSMutableArray alloc]init];
+    
+    Arrvalues1=[[NSMutableArray alloc]init];
     
     [self.navigationController setTitle:@"Catagorey"];
     
@@ -83,44 +92,48 @@
     if (sqlite3_open([destination UTF8String], &database)==SQLITE_OK)
         {
     
-                NSString *query=@"select * from product";
+            NSString *query=@"select * from product";
     
-                sqlite3_stmt *stmt;
+            sqlite3_stmt *stmt;
     
-                if(sqlite3_prepare_v2(database, [query UTF8String], -1, &stmt, nil)==SQLITE_OK)
+            if(sqlite3_prepare_v2(database, [query UTF8String], -1, &stmt, nil)==SQLITE_OK)
+            {
+                while (sqlite3_step(stmt)==SQLITE_ROW)
+                {
+                        
+                    str=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 0)];
+                    
+                    
+                    NSLog(@"Category is : %@", str);
+                    
+                              
+                    [Arrvalues addObject:str];
+                                
+                    if ([sender isEqual:Arrvalues])
                     {
-                            while (sqlite3_step(stmt)==SQLITE_ROW)
-                                {
-            
-                                        NSString *str=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 4)];
-            
-                                        NSLog(@"Values is : %@", str);
-            
-                                        [Arrvalues addObject:str];
-            
-                                }
-        
-        
+                                              
+                        str1=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 4)];
+                        
+                        NSLog(@"Subcategory is : %@", str1);
+                                               
+                        [Arrvalues1 addObject:str1];
+
+                        NSLog(@"Subcategory is :%@",Arrvalues1);
+                    
                     }
+                    
+                    
+                }
+        
+        
+            }
     
         }
 
-
-
 }
 
--(void)display:(id)sender;
-{
-   
-    NSString *xyz=sender;
-    
-    NSLog(@"xyz is :%@", xyz);
-    
-    [Arrvalues addObject:xyz];
-    
-    NSLog(@"Array is :%@", Arrvalues);
 
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -138,7 +151,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 
-    return [Arrvalues count];;
+    return [Arrvalues1 count];;
 
 }
 
@@ -147,14 +160,13 @@
    
         UITableViewCell *cell=[[UITableViewCell alloc]init];
     
-        cell.textLabel.text=[Arrvalues objectAtIndex:indexPath.row];
+        cell.textLabel.text=[Arrvalues1 objectAtIndex:indexPath.row];
     
         return cell;
 
 }
 
-    
-    
+
 
 
 

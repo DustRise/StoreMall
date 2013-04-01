@@ -32,7 +32,7 @@
     [super viewDidLoad];
 
     Arrvalues=[[NSMutableArray alloc]init];
-    
+        
     [self.navigationController setTitle:@"Catagorey"];
     
     source=[[NSBundle mainBundle]pathForResource:@"Stores" ofType:@"sqlite"];
@@ -66,49 +66,47 @@
         NSLog(@"File has some problem");
         
     }
-    [self display];
 
-}
-
--(void)display;
-{
     sqlite3 *database;
-    
-    
+
+
     if (sqlite3_open([destination UTF8String], &database)==SQLITE_OK)
     {
-        
+    
         NSString *query=@"select * from product";
-        
+    
         sqlite3_stmt *stmt;
         
         if(sqlite3_prepare_v2(database, [query UTF8String], -1, &stmt, nil)==SQLITE_OK)
         {
             while (sqlite3_step(stmt)==SQLITE_ROW)
             {
-               
+            
                 NSString *str=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 0)];
-                
-                NSLog(@"Values is : %@", str);
+            
+               
+                    NSLog(@"Categories are is : %@", str);
                 
                 [Arrvalues addObject:str];
-            
+                
+                               
             }
-            
-            
-        }
         
+        }
+    
     }
 
-    
+
+
 }
+
+
 - (void)didReceiveMemoryWarning
 {
 
     [super didReceiveMemoryWarning];
 
 }
-
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -135,7 +133,7 @@
 {
     
     
-    NSString *localstr=[Arrvalues objectAtIndex:indexPath.row+1];
+    NSString *localstr=[Arrvalues objectAtIndex:indexPath.row];
     
     SubCatagory *subcat=[[SubCatagory alloc]init];
     
