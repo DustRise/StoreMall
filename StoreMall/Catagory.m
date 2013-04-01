@@ -8,6 +8,7 @@
 
 #import "Catagory.h"
 #import "ViewController.h"
+#import "SubCatagory.h"
 
 @interface Catagory ()
 
@@ -15,7 +16,7 @@
 @end
 
 @implementation Catagory
-@synthesize sub,data;
+@synthesize data;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -133,36 +134,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    data=[Arrvalues objectAtIndex:indexPath.row];
     
-    NSLog(@"Values :%@", data);
+    NSString *localstr=[Arrvalues objectAtIndex:indexPath.row+1];
     
-    sub=[[SubCatagory alloc]init];
+    SubCatagory *subcat=[[SubCatagory alloc]init];
     
-    //[self.navigationController pushViewController:sub animated:YES];
+    subcat=[self.storyboard instantiateViewControllerWithIdentifier:@"SubCatagory"];    
+      
+    [self presentViewController:subcat animated:YES completion:nil];
     
-    
+    [subcat display:localstr];
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    if ([[segue identifier] isEqual:@"passValue"])
-    {
-        
-        sub=[segue destinationViewController];
-        
-        sub.values=self.data;
-        
-        NSLog(@"Values :%@", sub.values);
-        
-        
-        NSLog(@"Data :%@", data);
-    }
-    
-    
-}
 
 
 @end

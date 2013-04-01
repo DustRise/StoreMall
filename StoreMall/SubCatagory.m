@@ -20,8 +20,9 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        
     }
     return self;
 }
@@ -75,48 +76,59 @@
         NSLog(@"File has some problem");
         
     }
-    [self display];
+
+    sqlite3 *database;
+
+
+    if (sqlite3_open([destination UTF8String], &database)==SQLITE_OK)
+        {
     
+                NSString *query=@"select * from product";
+    
+                sqlite3_stmt *stmt;
+    
+                if(sqlite3_prepare_v2(database, [query UTF8String], -1, &stmt, nil)==SQLITE_OK)
+                    {
+                            while (sqlite3_step(stmt)==SQLITE_ROW)
+                                {
+            
+                                        NSString *str=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 4)];
+            
+                                        NSLog(@"Values is : %@", str);
+            
+                                        [Arrvalues addObject:str];
+            
+                                }
+        
+        
+                    }
+    
+        }
+
+
+
 }
 
--(void)display;
+-(void)display:(id)sender;
 {
-    sqlite3 *database;
+   
+    NSString *xyz=sender;
     
+    NSLog(@"xyz is :%@", xyz);
     
-    if (sqlite3_open([destination UTF8String], &database)==SQLITE_OK)
-    {
-        
-        NSString *query=@"select * from product";
-        
-        sqlite3_stmt *stmt;
-        
-        if(sqlite3_prepare_v2(database, [query UTF8String], -1, &stmt, nil)==SQLITE_OK)
-        {
-            while (sqlite3_step(stmt)==SQLITE_ROW)
-            {
-                
-                NSString *str=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 4)];
-                
-                NSLog(@"Values is : %@", str);
-                
-                [Arrvalues addObject:str];
-                
-            }
-            
-            
-        }
-        
-    }
+    [Arrvalues addObject:xyz];
+    
+    NSLog(@"Array is :%@", Arrvalues);
+
 }
- 
+
 - (void)didReceiveMemoryWarning
 {
+    
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -139,16 +151,11 @@
     
         return cell;
 
-
 }
 
+    
+    
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    
-    
-    
-}
+
 
 @end

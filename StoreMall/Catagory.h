@@ -22,7 +22,7 @@
     
     
 }
-@property(nonatomic,retain)SubCatagory *sub;
+//@property(nonatomic,retain)SubCatagory *sub;
 @property(nonatomic,retain)NSString *data;
 
 -(void)display;

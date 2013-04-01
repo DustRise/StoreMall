@@ -22,6 +22,6 @@
 
 @property(nonatomic, retain) NSString *values;
 
--(void)display;
+-(void)display:(id)sender;
 
 @end
