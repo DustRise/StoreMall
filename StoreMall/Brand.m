@@ -1,29 +1,26 @@
 //
-//  SubCatagory.m
-//  StoreApp
+//  Brand.m
+//  StoreMall
 //
-//  Created by dustrise on 25/03/13.
+//  Created by dustrise on 01/04/13.
 //  Copyright (c) 2013 dustrise. All rights reserved.
 //
 
-#import "SubCatagory.h"
 #import "Brand.h"
 
-@interface SubCatagory ()
+@interface Brand ()
 
 @end
 
-@implementation SubCatagory
+@implementation Brand
 @synthesize values;
-
 
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self)
-    {
-        
+    if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -32,11 +29,13 @@
 {
     [super viewDidLoad];
 
+    
 }
 
--(void)display:(id)sender;
-{
 
+-(void)branddisplay:(id)sender;
+{
+    
     values=[[NSString alloc]init];
     
     values=sender;
@@ -86,59 +85,59 @@
         NSLog(@"File has some problem");
         
     }
-
+    
     sqlite3 *database;
-
-
+    
+    
     if (sqlite3_open([destination UTF8String], &database)==SQLITE_OK)
+    {
+        
+        NSString *query=@"select * from product";
+        
+        sqlite3_stmt *stmt;
+        
+        if(sqlite3_prepare_v2(database, [query UTF8String], -1, &stmt, nil)==SQLITE_OK)
         {
-    
-            NSString *query=[NSString stringWithFormat:@"select brand from product where productname=%@", values];
-    
-            
-    
-            if(sqlite3_prepare_v2(database, [query UTF8String], -1, &stmt, nil)==SQLITE_OK)
+            while (sqlite3_step(stmt)==SQLITE_ROW)
             {
-                while (sqlite3_step(stmt)==SQLITE_ROW)
+                
+                str=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 0)];
+                
+                
+                NSLog(@"Category is : %@", str);
+                
+                
+                [Arrvalues addObject:str];
+                
+                if ([values isEqual:Arrvalues])
                 {
-                        
-                    str=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 0)];
                     
+                    str1=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 2)];
                     
-                    NSLog(@"Category is : %@", str);
+                    NSLog(@"Subcategory is : %@", str1);
                     
-                              
-                    [Arrvalues addObject:str];
-                                
-                    if ([values isEqual:Arrvalues])
-                    {
-                                              
-                        str1=[NSString stringWithUTF8String:(char *) sqlite3_column_text(stmt, 4)];
-                        
-                        NSLog(@"Subcategory is : %@", str1);
-                                               
-                        [Arrvalues1 addObject:str1];
-
-                        NSLog(@"Subcategory is :%@",Arrvalues1);
+                    [Arrvalues1 addObject:str1];
                     
-                    }
-                    
+                    NSLog(@"Subcategory is :%@",Arrvalues1);
                     
                 }
-        
-        
+                
+                
             }
-    
+            
+            
         }
-
+        
+    }
+    
 }
+
 
 
 
 
 - (void)didReceiveMemoryWarning
 {
-    
     [super didReceiveMemoryWarning];
     
 }
@@ -146,29 +145,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-        return 1;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
-    return [Arrvalues1 count];;
-
+    return [Arrvalues1 count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
-        UITableViewCell *cell=[[UITableViewCell alloc]init];
     
-        cell.textLabel.text=[Arrvalues1 objectAtIndex:indexPath.row];
     
-        return cell;
-
+    //return cell;
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 
 
+}
 
 @end
