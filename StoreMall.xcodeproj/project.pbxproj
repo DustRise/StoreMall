@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E53D950A170ABD55006FDBAA /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = E53D9509170ABD55006FDBAA /* Login.m */; };
 		E581E5511709AF22004E837B /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = E581E5501709AF22004E837B /* Brand.m */; };
 		E581E5531709B654004E837B /* Stores.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E581E5521709B654004E837B /* Stores.sqlite */; };
 		E5910623170401480015B877 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5910622170401480015B877 /* UIKit.framework */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E53D9508170ABD55006FDBAA /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
+		E53D9509170ABD55006FDBAA /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
 		E581E54F1709AF22004E837B /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
 		E581E5501709AF22004E837B /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
 		E581E5521709B654004E837B /* Stores.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stores.sqlite; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				E591065317042ACB0015B877 /* SubCatagory.m */,
 				E581E54F1709AF22004E837B /* Brand.h */,
 				E581E5501709AF22004E837B /* Brand.m */,
+				E53D9508170ABD55006FDBAA /* Login.h */,
+				E53D9509170ABD55006FDBAA /* Login.m */,
 				E5910629170401480015B877 /* Supporting Files */,
 			);
 			path = StoreMall;
@@ -206,6 +211,7 @@
 				E591064A1704289E0015B877 /* Catagory.m in Sources */,
 				E591065417042ACB0015B877 /* SubCatagory.m in Sources */,
 				E581E5511709AF22004E837B /* Brand.m in Sources */,
+				E53D950A170ABD55006FDBAA /* Login.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
