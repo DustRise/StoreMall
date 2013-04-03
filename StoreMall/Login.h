@@ -15,6 +15,8 @@
     
     IBOutlet UIButton *btn;
     
+    IBOutlet UILabel *lbl;
+    
 }
 
 @end
